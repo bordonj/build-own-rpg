@@ -74,3 +74,13 @@ describe('storeState', () => {
     expect(state2).toEqual({ property: "test", yetAnotherProperty: "hello" })
   });
 })
+
+describe('NPCs', () => {
+  
+  test("should erase NPCs in NPCStore", () => {
+    expect(rpg.resetAllNPCStore()).toEqual({
+      npcs: []
+    });
+  })
+
+})
