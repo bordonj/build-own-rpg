@@ -84,13 +84,14 @@ export const resetPCStore = () => {
   })
 }
 
-// export const createPC = (name) => {
-//   return PCStore(() => {
-//     return {
-//       name
-//     }
-//   })
-// }
+export const createPC = (name) => {
+  return PCStore(() => {
+    return {
+      name,
+      stats: {},
+    }
+  })
+}
 
 
 

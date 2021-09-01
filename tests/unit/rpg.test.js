@@ -154,10 +154,10 @@ describe('Haikus', () => {
       expect(rpg.resetPCStore()).toEqual({});
     })
   
-    // test("should initialize and have property pcs", () => {
-    //   rpg.initPCs();
-    //   expect(rpg.allPCStore()).toHaveProperty('pcs');
-    // })
+    test("should initialize and have property pcs", () => {
+      rpg.createPC();
+      expect(rpg.PCStore()).toHaveProperty('name');
+    })
   })
 
 })
