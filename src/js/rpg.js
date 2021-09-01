@@ -54,6 +54,26 @@ export const initHaikus = () => {
   })
 }
 
+export const addHaiku = (line1,line2,line3,type) => {
+  return allHaikuStore((previous) => {
+    const totalHaikusCreated = (previous.totalHaikusCreated || 0) + 1
+    return {
+      haikus: [
+        ...(previous.hakus || []),
+        {
+          line1,
+          line2,
+          line3,
+          type,
+          used: false,
+          id: totalHaikusCreated,
+        },
+      ],
+      totalHaikusCreated,
+    }
+  })
+}
+
 // haiku: 
 // line 1
 // line 2
@@ -61,7 +81,6 @@ export const initHaikus = () => {
 // id
 // type (rps)
 // used
-
 
 // This is a function factory. We can easily create more specific functions that alter a character's health/mana to varying degrees.
 
@@ -82,42 +101,7 @@ export const initHaikus = () => {
 // export const hydrate = changeState("water")(1);
 // export const superWater = changeState("water")(5);
 
-// Create Plants
-
-// const currentState = stateControl(function (previousState) {
-//   return {
-//     ...previousState,
-//     soil: previousState.soil + 1
-//   }
-// })
-
-// currently storestate represents a plant
-
-
-// function initializeAllPlantStore () {
-//   return allPlantStore(() => {
-//     return {
-//       plants: [],
-//       totalPlantsCreated: 0,
-//     }
-//   })
-// }
-
 // const currentPlants = initializeAllPlantStore()
-
-// export function addPlant() {
-//   return allPlantStore((previous) => {
-//     const totalPlantsCreated = (previous.totalPlantsCreated || 0) + 1
-
-//     return {
-//       plants: [
-//         ...(previous.plants || []),
-//         { id: totalPlantsCreated },
-//       ],
-//       totalPlantsCreated,
-//     }
-//   })
-// }
 
 // removes a plant by ID
 

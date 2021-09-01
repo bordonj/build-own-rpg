@@ -98,4 +98,20 @@ describe('Haikus', () => {
     expect(rpg.allNPCStore()).toHaveProperty('npcs');
   })
   
+  test('should add haiku', () => {
+    const newHaiku = rpg.addHaiku("I remember rock,", "and walking on the ceiling,", "all outside myself.", "rock" );
+    expect(newHaiku).toEqual({
+      haikus: [
+        {
+          line1: "I remember rock,",
+          line2: "and walking on the ceiling,",
+          line3: "all outside myself.",
+          type: "rock",
+          used: false,
+          id: 1,
+        },
+      ],
+      totalHaikusCreated: 1,
+    })
+  })
 })
