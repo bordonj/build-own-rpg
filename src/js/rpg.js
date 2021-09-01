@@ -59,7 +59,7 @@ export const addHaiku = (line1,line2,line3,type) => {
     const totalHaikusCreated = (previous.totalHaikusCreated || 0) + 1
     return {
       haikus: [
-        ...(previous.hakus || []),
+        ...(previous.haikus || []),
         {
           line1,
           line2,
@@ -73,14 +73,6 @@ export const addHaiku = (line1,line2,line3,type) => {
     }
   })
 }
-
-// haiku: 
-// line 1
-// line 2
-// line 3
-// id
-// type (rps)
-// used
 
 // This is a function factory. We can easily create more specific functions that alter a character's health/mana to varying degrees.
 

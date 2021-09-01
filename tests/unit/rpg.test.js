@@ -93,9 +93,14 @@ describe('Haikus', () => {
     expect(rpg.resetAllHaikuStore()).toEqual({});
   })
 
+  beforeEach(() => {
+    rpg.resetAllHaikuStore();
+  });
+
+  
   test("should have property haikus", () => {
-    rpg.initNPCs();
-    expect(rpg.allNPCStore()).toHaveProperty('npcs');
+    rpg.initHaikus();
+    expect(rpg.allHaikuStore()).toHaveProperty('haikus');
   })
   
   test('should add haiku', () => {
@@ -112,6 +117,34 @@ describe('Haikus', () => {
         },
       ],
       totalHaikusCreated: 1,
+    })
+  })
+  
+  test('should add another haiku and update id', () => {
+    rpg.addHaiku("I remember rock,", "and walking on the ceiling,", "all outside myself.", "rock" );
+    rpg.addHaiku("I remember paper,", "and walking on the ceiling,", "all outside myself.", "paper" );
+    const haikuStore = rpg.allHaikuStore(); // result of a function... not an object that contains data that changes! 🤯
+    
+    expect(haikuStore).toEqual({
+      haikus: [
+        {
+          line1: "I remember rock,",
+          line2: "and walking on the ceiling,",
+          line3: "all outside myself.",
+          type: "rock",
+          used: false,
+          id: 1,
+        },
+        {
+          line1: "I remember paper,",
+          line2: "and walking on the ceiling,",
+          line3: "all outside myself.",
+          type: "paper",
+          used: false,
+          id: 2,
+        },
+      ],
+      totalHaikusCreated: 2,
     })
   })
 })
