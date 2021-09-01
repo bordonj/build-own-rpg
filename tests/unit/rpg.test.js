@@ -81,7 +81,7 @@ describe('NPCs', () => {
     expect(rpg.resetAllNPCStore()).toEqual({});
   })
 
-  test("should have property npcs", () => {
+  test("should initialize and have property npcs", () => {
     rpg.initNPCs();
     expect(rpg.allNPCStore()).toHaveProperty('npcs');
   })
@@ -147,4 +147,17 @@ describe('Haikus', () => {
       totalHaikusCreated: 2,
     })
   })
+
+  describe('PCs', () => {
+  
+    test("should erase PCs in PCStore", () => {
+      expect(rpg.resetPCStore()).toEqual({});
+    })
+  
+    // test("should initialize and have property pcs", () => {
+    //   rpg.initPCs();
+    //   expect(rpg.allPCStore()).toHaveProperty('pcs');
+    // })
+  })
+
 })

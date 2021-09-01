@@ -74,6 +74,26 @@ export const addHaiku = (line1,line2,line3,type) => {
   })
 }
 
+// Playable Character
+
+export const PCStore = storeState()
+
+export const resetPCStore = () => {
+  return PCStore(() => {
+    return {}
+  })
+}
+
+// export const createPC = (name) => {
+//   return PCStore(() => {
+//     return {
+//       name
+//     }
+//   })
+// }
+
+
+
 // This is a function factory. We can easily create more specific functions that alter a character's health/mana to varying degrees.
 
 // export const changeState = (prop) => {
