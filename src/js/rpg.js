@@ -93,6 +93,28 @@ export const createPC = (name) => {
   })
 }
 
+// Function Factory!
+
+export const changeState = (prop) => {
+  return (value) => {
+    return (state) => ({
+      ...state,
+      [prop]: (state[prop] || 0) + value
+    })
+  }
+}
+
+export const changeHp = (firstProp, prop) => {
+  return (value) => {
+    return (state) => ({
+      ...state,
+      [firstProp]: (state[prop] || 0) + value
+    })
+  }
+}
+
+// Abilities
+
 
 
 // This is a function factory. We can easily create more specific functions that alter a character's health/mana to varying degrees.

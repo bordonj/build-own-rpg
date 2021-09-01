@@ -161,3 +161,23 @@ describe('Haikus', () => {
   })
 
 })
+
+describe('Function Factory', () => {
+
+  test("should change state of an NPC", () => {
+    rpg.initNPCs();
+    const feed = rpg.changeState({npcs:[0].hp})(500);
+    // const feed = rpg.changeState("poop")(500);
+    const npcState = rpg.allNPCStore();
+    rpg.allNPCStore(feed);
+    // npcState(feed)
+    expect(rpg.allNPCStore()).toEqual({
+      npcs: [
+        {
+          name: "Rocky",
+          hp: 650,
+        },
+      ]
+    });
+  })
+})
