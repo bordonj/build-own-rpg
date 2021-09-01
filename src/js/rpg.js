@@ -13,7 +13,7 @@ export const storeState = () => {
 
 export const stateControl = storeState();
 
-// This function stores our NPC information
+// NPCs
 
 export const allNPCStore = storeState()
 
@@ -21,6 +21,18 @@ export const resetAllNPCStore = () => {
   return allNPCStore(() => {
     return {
       npcs: []
+    }
+  })
+}
+
+export const initNPCs = () => {
+  return allNPCStore(() => {
+    return {
+      npcs: [
+        {
+          name: "Rocky",
+        },
+      ]
     }
   })
 }

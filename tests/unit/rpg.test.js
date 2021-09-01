@@ -83,4 +83,8 @@ describe('NPCs', () => {
     });
   })
 
+  test("should begin with NPCs Rocky", () => {
+    rpg.initNPCs();
+    expect(rpg.allNPCStore()).toHaveProperty('npcs', [{'name': 'Rocky'}]);
+  })
 })
