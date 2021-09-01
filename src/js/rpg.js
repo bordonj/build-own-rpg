@@ -19,9 +19,7 @@ export const allNPCStore = storeState()
 
 export const resetAllNPCStore = () => {
   return allNPCStore(() => {
-    return {
-      npcs: []
-    }
+    return {}
   })
 }
 
@@ -31,6 +29,7 @@ export const initNPCs = () => {
       npcs: [
         {
           name: "Rocky",
+          hp: 150,
         },
       ]
     }

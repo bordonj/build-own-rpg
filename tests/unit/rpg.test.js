@@ -78,13 +78,11 @@ describe('storeState', () => {
 describe('NPCs', () => {
   
   test("should erase NPCs in NPCStore", () => {
-    expect(rpg.resetAllNPCStore()).toEqual({
-      npcs: []
-    });
+    expect(rpg.resetAllNPCStore()).toEqual({});
   })
 
   test("should begin with NPCs Rocky", () => {
     rpg.initNPCs();
-    expect(rpg.allNPCStore()).toHaveProperty('npcs', [{'name': 'Rocky'}]);
+    expect(rpg.allNPCStore()).toHaveProperty('npcs');
   })
 })
