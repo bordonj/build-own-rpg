@@ -81,8 +81,21 @@ describe('NPCs', () => {
     expect(rpg.resetAllNPCStore()).toEqual({});
   })
 
-  test("should begin with NPCs Rocky", () => {
+  test("should have property npcs", () => {
     rpg.initNPCs();
     expect(rpg.allNPCStore()).toHaveProperty('npcs');
   })
+})
+
+describe('Haikus', () => {
+  
+  test("should erase Haikus in haikuStore", () => {
+    expect(rpg.resetAllHaikuStore()).toEqual({});
+  })
+
+  test("should have property haikus", () => {
+    rpg.initNPCs();
+    expect(rpg.allNPCStore()).toHaveProperty('npcs');
+  })
+  
 })

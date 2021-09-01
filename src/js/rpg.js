@@ -36,6 +36,33 @@ export const initNPCs = () => {
   })
 }
 
+// Haikus
+
+export const allHaikuStore = storeState()
+
+export const resetAllHaikuStore = () => {
+  return allHaikuStore(() => {
+    return {}
+  })
+}
+
+export const initHaikus = () => {
+  return allHaikuStore(() => {
+    return {
+      haikus: [],
+    }
+  })
+}
+
+// haiku: 
+// line 1
+// line 2
+// line 3
+// id
+// type (rps)
+// used
+
+
 // This is a function factory. We can easily create more specific functions that alter a character's health/mana to varying degrees.
 
 // export const changeState = (prop) => {
