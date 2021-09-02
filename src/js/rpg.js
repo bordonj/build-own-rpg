@@ -97,21 +97,20 @@ export const createPC = (name) => {
 
 export const changeState = (prop) => {
   return (value) => {
-    return (state) => ({
-      ...state,
-      [prop]: (state[prop] || 0) + value
-    })
+    return (index) => {
+      return (state) => ({
+        // need to specify the property...
+        npcs: state.npcs.map((person, idx) => {
+          if (idx !== index) return person; // return same person except for one we tried to match
+          person[prop] += value;
+          return person;
+        })
+      })
+    }
   }
 }
 
-export const changeHp = (firstProp, prop) => {
-  return (value) => {
-    return (state) => ({
-      ...state,
-      [firstProp]: (state[prop] || 0) + value
-    })
-  }
-}
+
 
 // Abilities
 
